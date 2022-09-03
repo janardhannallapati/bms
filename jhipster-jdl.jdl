@@ -1,0 +1,152 @@
+entity Actor {
+	@Id actorId Long required,
+	firstName String required maxlength(45),
+	lastName String required maxlength(45)
+}
+
+entity Genre {
+	@Id genreId Long required,
+	name String required maxlength(25)
+}
+
+entity Language {
+	@Id languageId Long required,
+	name String required maxlength(20)
+}
+
+entity Movie {
+	@Id movieId Long required,
+	title String required maxlength(128),
+	description String maxlength(255),
+	releaseYear Integer min(1870) max(2100)
+	length Integer,
+	rating Rating required
+}
+
+entity City {
+	@Id cityId Long required,
+	cityName String required maxlength(50)
+}
+
+entity Country {
+	@Id countryId Long required,
+    countryCode String required maxlength(3),
+	countryName String required maxlength(50)
+}
+
+entity Address {
+	@Id addressId Long required,
+	address String required maxlength(50),
+	address2 String maxlength(50),
+	district String required maxlength(20),
+	postalCode String required maxlength(10),
+	phone String required maxlength(20),
+	location String required
+}
+
+entity Theatre {
+	@Id theatreId Long required,
+	theatreName String maxlength(45),
+	noOfScreens Integer required
+}
+
+entity Screen {
+	@Id screenId Long required,
+	name String maxlength(45) required,
+	totalSeats Integer required
+}
+
+entity Seat {
+	@Id seatId Long required,
+	seatNumber Integer required,
+    seatDescr String maxlength(10),
+	type String maxlength(50) required
+}
+
+entity ShowSeat {
+	@Id showSeatId Long required,
+	price BigDecimal required,
+	status SeatStatus required
+}
+
+entity Show {
+	@Id showId Long required,
+	date LocalDate required,
+	startTime Instant required,
+	endTime Instant required
+}
+
+entity Booking {
+	@Id bookingId Long required,
+	timestamp Instant required,
+	status BookingStatus required
+}
+
+entity Customer {
+	@Id customerId Long required,
+	firstName String required maxlength(45),
+	lastName String required maxlength(45),
+	email String maxlength(50)
+}
+
+entity Payment {
+	@Id paymentId Long required,
+	amount BigDecimal required,
+	timestamp Instant required,
+	couponId String maxlength(45),
+	paymentMethod String maxlength(45)
+}
+
+
+enum Rating {
+G,
+PG,
+PG13,
+R,
+NC17
+}
+
+enum SeatStatus {
+  AVAIALBLE,
+  FULL,
+  ALMOSTFULL
+}
+
+enum BookingStatus {
+   RESERVED,
+   BOOKED,
+   EXPIRED
+}
+
+
+// Relations
+relationship ManyToOne {
+	Movie{language required} to Language,
+    City{country required} to Country,
+    Address{city required} to City,
+    Screen{theatre required} to Theatre,
+    Seat{screen required} to Screen,
+    Show{movie required} to Movie,
+    Show{screen required} to Screen,
+    Customer{address required} to Address,
+    Booking{customer required} to Customer,
+    Booking{show required} to Show,
+    Payment{booking required} to Booking,
+    ShowSeat{seat required} to Seat,
+    ShowSeat{show required} to Show,
+    ShowSeat{booking required} to Booking
+    
+}
+relationship ManyToMany {
+  	Movie{actor required} to Actor{movie},
+	Movie{genre required} to Genre{movie},
+    Show{seat required} to Seat{show}
+}
+
+
+// Options
+service * with serviceClass
+paginate * with pagination
+dto * with mapstruct
+filter *
+
