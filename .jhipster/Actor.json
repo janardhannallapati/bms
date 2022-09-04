@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20220903115211",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "actor",
+  "fields": [
+    {
+      "fieldName": "actorId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "45"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "45"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Actor",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "movie",
+      "otherEntityRelationshipName": "actor",
+      "ownerSide": false,
+      "relationshipName": "movie",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

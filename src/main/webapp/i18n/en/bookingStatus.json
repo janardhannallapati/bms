@@ -1,0 +1,10 @@
+{
+  "bmsApp": {
+    "BookingStatus": {
+      "null": "",
+      "RESERVED": "RESERVED",
+      "BOOKED": "BOOKED",
+      "EXPIRED": "EXPIRED"
+    }
+  }
+}

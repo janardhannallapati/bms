@@ -1,0 +1,28 @@
+{
+  "bmsApp": {
+    "showSeat": {
+      "home": {
+        "title": "Show Seats",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Show Seat",
+        "createOrEditLabel": "Create or edit a Show Seat",
+        "notFound": "No Show Seats found"
+      },
+      "created": "A new Show Seat is created with identifier {{ param }}",
+      "updated": "A Show Seat is updated with identifier {{ param }}",
+      "deleted": "A Show Seat is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Show Seat {{ id }}?"
+      },
+      "detail": {
+        "title": "Show Seat"
+      },
+      "showSeatId": "Show Seat Id",
+      "price": "Price",
+      "status": "Status",
+      "seat": "Seat",
+      "show": "Show",
+      "booking": "Booking"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "applications": "*",
+  "changelogDate": "20220903115213",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "language",
+  "fields": [
+    {
+      "fieldName": "languageId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Language",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

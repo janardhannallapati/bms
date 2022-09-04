@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20220903115218",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "theatre",
+  "fields": [
+    {
+      "fieldName": "theatreId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "theatreName",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "45"
+    },
+    {
+      "fieldName": "noOfScreens",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Theatre",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

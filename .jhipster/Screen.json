@@ -1,0 +1,42 @@
+{
+  "applications": "*",
+  "changelogDate": "20220903115219",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "screen",
+  "fields": [
+    {
+      "fieldName": "screenId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "required"],
+      "fieldValidateRulesMaxlength": "45"
+    },
+    {
+      "fieldName": "totalSeats",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Screen",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "theatre",
+      "relationshipName": "theatre",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceClass"
+}

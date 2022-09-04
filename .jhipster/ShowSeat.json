@@ -1,0 +1,54 @@
+{
+  "applications": "*",
+  "changelogDate": "20220903115221",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "show_seat",
+  "fields": [
+    {
+      "fieldName": "showSeatId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "SeatStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "AVAIALBLE,FULL,ALMOSTFULL"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "ShowSeat",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "seat",
+      "relationshipName": "seat",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "show",
+      "relationshipName": "show",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "booking",
+      "relationshipName": "booking",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceClass"
+}

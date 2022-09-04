@@ -1,0 +1,25 @@
+{
+  "bmsApp": {
+    "theatre": {
+      "home": {
+        "title": "Theatres",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Theatre",
+        "createOrEditLabel": "Create or edit a Theatre",
+        "notFound": "No Theatres found"
+      },
+      "created": "A new Theatre is created with identifier {{ param }}",
+      "updated": "A Theatre is updated with identifier {{ param }}",
+      "deleted": "A Theatre is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Theatre {{ id }}?"
+      },
+      "detail": {
+        "title": "Theatre"
+      },
+      "theatreId": "Theatre Id",
+      "theatreName": "Theatre Name",
+      "noOfScreens": "No Of Screens"
+    }
+  }
+}

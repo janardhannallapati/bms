@@ -7,6 +7,21 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "actor": "Actor",
+        "genre": "Genre",
+        "language": "Language",
+        "movie": "Movie",
+        "city": "City",
+        "country": "Country",
+        "address": "Address",
+        "theatre": "Theatre",
+        "screen": "Screen",
+        "seat": "Seat",
+        "showSeat": "Show Seat",
+        "show": "Show",
+        "booking": "Booking",
+        "customer": "Customer",
+        "payment": "Payment",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

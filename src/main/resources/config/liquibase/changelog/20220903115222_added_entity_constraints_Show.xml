@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Show.
+    -->
+    <changeSet id="20220903115222-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="movie_movie_id"
+                                 baseTableName="jhi_show"
+                                 constraintName="fk_jhi_show__movie_id"
+                                 referencedColumnNames="movie_id"
+                                 referencedTableName="movie"/>
+
+        <addForeignKeyConstraint baseColumnNames="screen_screen_id"
+                                 baseTableName="jhi_show"
+                                 constraintName="fk_jhi_show__screen_id"
+                                 referencedColumnNames="screen_id"
+                                 referencedTableName="screen"/>
+
+        <addForeignKeyConstraint baseColumnNames="jhi_show_show_id"
+                                 baseTableName="rel_jhi_show__seat"
+                                 constraintName="fk_rel_jhi_show__seat__jhi_show_id"
+                                 referencedColumnNames="show_id"
+                                 referencedTableName="jhi_show"/>
+
+        <addForeignKeyConstraint baseColumnNames="seat_seat_id"
+                                 baseTableName="rel_jhi_show__seat"
+                                 constraintName="fk_rel_jhi_show__seat__seat_id"
+                                 referencedColumnNames="seat_id"
+                                 referencedTableName="seat"/>
+    </changeSet>
+</databaseChangeLog>

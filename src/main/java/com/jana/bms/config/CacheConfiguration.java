@@ -48,6 +48,27 @@ public class CacheConfiguration {
             createCache(cm, com.jana.bms.domain.User.class.getName());
             createCache(cm, com.jana.bms.domain.Authority.class.getName());
             createCache(cm, com.jana.bms.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.jana.bms.domain.Actor.class.getName());
+            createCache(cm, com.jana.bms.domain.Actor.class.getName() + ".movies");
+            createCache(cm, com.jana.bms.domain.Genre.class.getName());
+            createCache(cm, com.jana.bms.domain.Genre.class.getName() + ".movies");
+            createCache(cm, com.jana.bms.domain.Language.class.getName());
+            createCache(cm, com.jana.bms.domain.Movie.class.getName());
+            createCache(cm, com.jana.bms.domain.Movie.class.getName() + ".actors");
+            createCache(cm, com.jana.bms.domain.Movie.class.getName() + ".genres");
+            createCache(cm, com.jana.bms.domain.City.class.getName());
+            createCache(cm, com.jana.bms.domain.Country.class.getName());
+            createCache(cm, com.jana.bms.domain.Address.class.getName());
+            createCache(cm, com.jana.bms.domain.Theatre.class.getName());
+            createCache(cm, com.jana.bms.domain.Screen.class.getName());
+            createCache(cm, com.jana.bms.domain.Seat.class.getName());
+            createCache(cm, com.jana.bms.domain.Seat.class.getName() + ".shows");
+            createCache(cm, com.jana.bms.domain.ShowSeat.class.getName());
+            createCache(cm, com.jana.bms.domain.Show.class.getName());
+            createCache(cm, com.jana.bms.domain.Show.class.getName() + ".seats");
+            createCache(cm, com.jana.bms.domain.Booking.class.getName());
+            createCache(cm, com.jana.bms.domain.Customer.class.getName());
+            createCache(cm, com.jana.bms.domain.Payment.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,76 @@
+{
+  "applications": "*",
+  "changelogDate": "20220903115214",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "movie",
+  "fields": [
+    {
+      "fieldName": "movieId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"],
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "128"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "releaseYear",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min", "max"],
+      "fieldValidateRulesMax": "2100",
+      "fieldValidateRulesMin": "1870"
+    },
+    {
+      "fieldName": "length",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "rating",
+      "fieldType": "Rating",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "G,PG,PG13,R,NC17"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Movie",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "language",
+      "relationshipName": "language",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "actor",
+      "otherEntityRelationshipName": "movie",
+      "ownerSide": true,
+      "relationshipName": "actor",
+      "relationshipType": "many-to-many",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "genre",
+      "otherEntityRelationshipName": "movie",
+      "ownerSide": true,
+      "relationshipName": "genre",
+      "relationshipType": "many-to-many",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "service": "serviceClass"
+}

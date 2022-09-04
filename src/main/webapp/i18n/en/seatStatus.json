@@ -1,0 +1,10 @@
+{
+  "bmsApp": {
+    "SeatStatus": {
+      "null": "",
+      "AVAIALBLE": "AVAIALBLE",
+      "FULL": "FULL",
+      "ALMOSTFULL": "ALMOSTFULL"
+    }
+  }
+}
