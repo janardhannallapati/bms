@@ -970,7 +970,7 @@
                                 <changeLogFile>${project.basedir}/src/main/resources/config/liquibase/master.xml</changeLogFile>
                                 <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                                 <driver>com.mysql.cj.jdbc.Driver</driver>
-                                <url>jdbc:mysql://localhost:3306/bms1</url>
+                                <url>jdbc:mysql://192.168.160.1:3306/bms1</url>
                                 <defaultSchemaName>bms1</defaultSchemaName>
                                 <username>user1</username>
                                 <password>user786</password>
